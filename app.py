@@ -31,16 +31,16 @@ age = st.number_input("Age", min_value=1)
 # Predict Button
 if st.button("Predict Diabetes Risk"):
 
-    input_data = pd.DataFrame([{
-        "Pregnancies": pregnancies,
-        "Glucose": glucose,
-        "BloodPressure": blood_pressure,
-        "SkinThickness": skin_thickness,
-        "Insulin": insulin,
-        "BMI": bmi,
-        "DiabetesPedigreeFunction": dpf,
-        "Age": age
-    }])
+   input_data = pd.DataFrame([{
+    "Pregnancies": pregnancies,
+    "Glucose": glucose,
+    "BloodPressure": blood_pressure,
+    "SkinThickness": skin_thickness,
+    "Insulin": insulin,
+    "BMI": bmi,
+    "DiabetesPedigreeFunction": dpf,
+    "Age": age
+}])
 
     prediction = model.predict(input_data)[0]
 
