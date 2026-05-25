@@ -22,17 +22,53 @@ st.write("Enter health details below:")
 # User Inputs
 col1, col2 = st.columns(2)
 
+st.markdown("## Enter Health Details")
+
+col1, col2 = st.columns(2)
+
 with col1:
-    pregnancies = st.number_input("Pregnancies", min_value=0)
-    glucose = st.number_input("Glucose", min_value=0)
-    blood_pressure = st.number_input("Blood Pressure", min_value=0)
-    skin_thickness = st.number_input("Skin Thickness", min_value=0)
+
+    pregnancies = st.slider(
+        "Pregnancies",
+        0, 20, 1
+    )
+
+    glucose = st.slider(
+        "Glucose Level",
+        50, 250, 100
+    )
+
+    blood_pressure = st.slider(
+        "Blood Pressure",
+        40, 180, 80
+    )
+
+    skin_thickness = st.slider(
+        "Skin Thickness",
+        0, 100, 20
+    )
 
 with col2:
-    insulin = st.number_input("Insulin", min_value=0)
-    bmi = st.number_input("BMI", min_value=0.0)
-    dpf = st.number_input("Diabetes Pedigree Function", min_value=0.0)
-    age = st.number_input("Age", min_value=1)
+
+    insulin = st.slider(
+        "Insulin Level",
+        0, 900, 80
+    )
+
+    bmi = st.slider(
+        "BMI",
+        10.0, 60.0, 25.0
+    )
+
+    dpf = st.slider(
+        "Diabetes Pedigree Function",
+        0.0, 3.0, 0.5
+    )
+
+    age = st.slider(
+        "Age",
+        1, 100, 25
+    )
 # Predict Button
 if st.button("Predict Diabetes Risk"):
 
