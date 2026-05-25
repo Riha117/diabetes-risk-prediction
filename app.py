@@ -1,4 +1,16 @@
+importance = model.feature_importances_
 
+features = X.columns
+
+plt.figure(figsize=(10,5))
+
+plt.bar(features, importance)
+
+plt.xticks(rotation=45)
+
+plt.title("Feature Importance")
+
+plt.show()
 import streamlit as st
 import pandas as pd
 import joblib
