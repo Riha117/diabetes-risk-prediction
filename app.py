@@ -1,4 +1,8 @@
-
+st.set_page_config(
+    page_title="Diabetes Prediction",
+    page_icon="🩺",
+    layout="centered"
+)
 import streamlit as st
 import pandas as pd
 import joblib
