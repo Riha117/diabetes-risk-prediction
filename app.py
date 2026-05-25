@@ -128,44 +128,35 @@ with col2:
 # Predict Button
 if st.button("Predict Diabetes Risk"):
 
-    input_data = pd.DataFrame([{
-        "Pregnancies": pregnancies,
-        "Glucose": glucose,
-        "BloodPressure": blood_pressure,
-        "SkinThickness": skin_thickness,
-        "Insulin": insulin,
-        "BMI": bmi,
-        "DiabetesPedigreeFunction": dpf,
-        "Age": age
-    }])
+    if st.button("Predict Diabetes Risk"):
+
+    input_data = [[
+        pregnancies,
+        glucose,
+        blood_pressure,
+        skin_thickness,
+        insulin,
+        bmi,
+        diabetes_pedigree,
+        age
+    ]]
 
     prediction = model.predict(input_data)[0]
-    probability = model.predict_proba(input_data)[0][1]
-    risk = "High" if prediction == 1 else "Low"
 
     probability = model.predict_proba(input_data)[0][1]
-    
-    st.session_state.history.append({
-    "Age": age,
-    "Glucose": glucose,
-    "BMI": bmi,
-    "Risk": risk
-})
 
-    st.write(f"Risk Probability: {probability:.2%}")
+    st.subheader("Prediction Result")
 
-  st.subheader("Prediction Result")
+    st.progress(float(probability))
 
-st.progress(float(probability))
-
-if prediction == 1:
-    st.error(
-        f"⚠ High Diabetes Risk ({probability:.2%})"
-    )
-else:
-    st.success(
-        f"✅ Low Diabetes Risk ({probability:.2%})"
-    )
+    if prediction == 1:
+        st.error(
+            f"⚠ High Diabetes Risk ({probability:.2%})"
+        )
+    else:
+        st.success(
+            f"✅ Low Diabetes Risk ({probability:.2%})"
+        )
 st.subheader("Prediction History")
 
 history_df = pd.DataFrame(st.session_state.history)
