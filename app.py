@@ -130,7 +130,7 @@ if st.button("Predict Diabetes Risk"):
 
     if st.button("Predict Diabetes Risk"):
 
-    input_data = [[
+        input_data = [[
         pregnancies,
         glucose,
         blood_pressure,
