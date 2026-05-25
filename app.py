@@ -1,17 +1,34 @@
+
+import streamlit as st
+import pandas as pd
+import joblib
+
 st.set_page_config(
     page_title="Diabetes Prediction",
     page_icon="🩺",
     layout="centered"
 )
-import streamlit as st
-import pandas as pd
-import joblib
 
 # Load trained model
 model = joblib.load("diabetes_model.pkl")
 
 # Title
-st.title("Diabetes Risk Prediction App")
+st.markdown(
+    "<h1 style='text-align:center;'>🩺 Diabetes Risk Predictor</h1>",
+    unsafe_allow_html=True
+)
+st.sidebar.title("About")
+
+st.sidebar.info(
+    """
+    This app predicts diabetes risk using a Random Forest Machine Learning model.
+    
+    Built with:
+    - Python
+    - Scikit-learn
+    - Streamlit
+    """
+)
 
 st.write("Enter health details below:")
 
