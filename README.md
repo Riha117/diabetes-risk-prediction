@@ -16,3 +16,7 @@ This project predicts diabetes risk using Random Forest and SHAP explainability.
 
 ## Author
 Your Name
+
+## App Screenshot
+
+![App Screenshot](app_screenshot.png)
