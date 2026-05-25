@@ -154,9 +154,9 @@ if st.button("Predict Diabetes Risk"):
 
     st.write(f"Risk Probability: {probability:.2%}")
 
-    st.subheader("Prediction Result")
+  st.subheader("Prediction Result")
 
-    st.progress(float(probability))
+st.progress(float(probability))
 
 if prediction == 1:
     st.error(
