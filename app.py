@@ -4,6 +4,35 @@ import pandas as pd
 import joblib
 import sqlite3
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(to right, #f8fbff, #e6f0ff);
+    }
+
+    h1 {
+        color: #0A66C2;
+    }
+
+    .stButton>button {
+        background-color: #0A66C2;
+        color: white;
+        border-radius: 12px;
+        height: 3em;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .stSlider {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if "history" not in st.session_state:
     st.session_state.history = []
 st.set_page_config(
