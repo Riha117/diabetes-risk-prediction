@@ -61,6 +61,17 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+st.sidebar.image(
+    "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
+    width=120
+)
+
+st.sidebar.title("Navigation")
+
+page = st.sidebar.radio(
+    "Go To",
+    ["Prediction", "About Project"]
+)
 
 st.write("Enter health details below:")
 
