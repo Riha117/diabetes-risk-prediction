@@ -3,6 +3,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+if "history" not in st.session_state:
+    st.session_state.history = []
+
 st.set_page_config(
     page_title="Diabetes Prediction",
     page_icon="🩺",
