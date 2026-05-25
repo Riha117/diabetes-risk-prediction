@@ -5,3 +5,5 @@ scikit-learn
 shap
 streamlit
 joblib
+streamlit
+shap
