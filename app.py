@@ -44,7 +44,23 @@ st.set_page_config(
 model = joblib.load("diabetes_model.pkl")
 
 # Title
-st.title("Diabetes Risk Prediction App")
+st.markdown(
+    """
+    <h1 style='text-align:center;'>
+    🩺 AI Diabetes Risk Predictor
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <p style='text-align:center; font-size:18px;'>
+    Predict diabetes risk using Machine Learning
+    </p>
+    """,
+    unsafe_allow_html=True
+)
 
 st.write("Enter health details below:")
 
