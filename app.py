@@ -71,3 +71,8 @@ st.session_state.history.append({
         st.error(f"High Diabetes Risk ({probability:.2%})")
     else:
         st.success(f"Low Diabetes Risk ({probability:.2%})")
+st.subheader("Prediction History")
+
+history_df = pd.DataFrame(st.session_state.history)
+
+st.dataframe(history_df)
