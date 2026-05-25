@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import sqlite3
 
 if "history" not in st.session_state:
     st.session_state.history = []
