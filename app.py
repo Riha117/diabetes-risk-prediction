@@ -6,7 +6,6 @@ import sqlite3
 
 if "history" not in st.session_state:
     st.session_state.history = []
-
 st.set_page_config(
     page_title="Diabetes Prediction",
     page_icon="🩺",
@@ -51,14 +50,14 @@ if st.button("Predict Diabetes Risk"):
     prediction = model.predict(input_data)[0]
     risk = "High" if prediction == 1 else "Low"
 
-st.session_state.history.append({
+    probability = model.predict_proba(input_data)[0][1]
+    
+    st.session_state.history.append({
     "Age": age,
     "Glucose": glucose,
     "BMI": bmi,
     "Risk": risk
 })
-
-    probability = model.predict_proba(input_data)[0][1]
 
     st.subheader("Prediction Result")
   
