@@ -48,6 +48,14 @@ if st.button("Predict Diabetes Risk"):
     }])
 
     prediction = model.predict(input_data)[0]
+    risk = "High" if prediction == 1 else "Low"
+
+st.session_state.history.append({
+    "Age": age,
+    "Glucose": glucose,
+    "BMI": bmi,
+    "Risk": risk
+})
 
     probability = model.predict_proba(input_data)[0][1]
 
