@@ -12,25 +12,25 @@ st.markdown(
 
     .stApp {
         background: linear-gradient(
-        135deg,
-        #0f172a,
-        #1e293b,
-        #0f766e
+            135deg,
+            #0f172a,
+            #1e293b,
+            #0f766e
         );
-        color: black;
+        color: white;
     }
 
     .main-title {
-        text-align:center;
-        font-size:48px;
-        font-weight:bold;
-        color:white;
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: white;
     }
 
     .sub-title {
-        text-align:center;
-        font-size:20px;
-        color:#cbd5e1;
+        text-align: center;
+        font-size: 20px;
+        color: #cbd5e1;
     }
 
     div[data-testid="stMetric"] {
@@ -40,65 +40,35 @@ st.markdown(
     }
 
     .stButton>button {
-        width:100%;
-        border-radius:15px;
-        height:3em;
-        font-size:20px;
-        background: linear-gradient(
-        90deg,
-        #06b6d4,
-        #3b82f6
-        );
-        color:white;
-        border:none;
-    }
-
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background: linear-gradient(to right, #f8fbff, #e6f0ff);
-    }
-
-    h1 {
-        color: #0A66C2;
-    }
-
-    .stButton>button {
-        background-color: #0A66C2;
-        color: white;
-        border-radius: 12px;
-        height: 3em;
         width: 100%;
-        font-size: 18px;
+        border-radius: 15px;
+        height: 3em;
+        font-size: 20px;
+        background: linear-gradient(
+            90deg,
+            #06b6d4,
+            #3b82f6
+        );
+        color: white;
+        border: none;
     }
 
     .stSlider {
         padding-top: 10px;
         padding-bottom: 10px;
     }
-    st.markdown(
-    """
-    <style>
+
     .glass {
         background: rgba(255,255,255,0.1);
-        padding:20px;
-        border-radius:20px;
+        padding: 20px;
+        border-radius: 20px;
         backdrop-filter: blur(10px);
     }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 if "history" not in st.session_state:
     st.session_state.history = []
 st.set_page_config(
