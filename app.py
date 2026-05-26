@@ -6,7 +6,11 @@ import joblib
 import sqlite3
 import plotly.graph_objects as go
 
-st.set_page_config(...)
+st.set_page_config(
+    page_title="Diabetes Prediction",
+    page_icon="🩺",
+    layout="centered"
+)
 
 st.markdown(
     """
