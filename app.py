@@ -6,6 +6,8 @@ import joblib
 import sqlite3
 import plotly.graph_objects as go
 
+st.set_page_config(...)
+
 st.markdown(
     """
     <style>
@@ -208,6 +210,7 @@ if st.button("Predict Diabetes Risk"):
         st.success(
             f"✅ Low Diabetes Risk ({probability:.2%})"
         )
+# Analytics Cards
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -219,6 +222,7 @@ with col2:
 with col3:
     st.metric("Age", age)
 
+# Health Analytics Chart
 chart_data = pd.DataFrame({
     "Health Metrics": [
         "Glucose",
@@ -232,17 +236,20 @@ chart_data = pd.DataFrame({
     ]
 })
 
+st.subheader("Health Analytics")
+
 st.bar_chart(
     chart_data.set_index("Health Metrics")
 )
 
+# Tabs
 tab1, tab2 = st.tabs([
     "Prediction",
     "Health Tips"
 ])
 
 with tab1:
-    st.write("Prediction dashboard")
+    st.write("AI Diabetes Prediction Dashboard")
 
 with tab2:
     st.info(
@@ -256,32 +263,4 @@ with tab2:
         ✔ Monitor glucose levels
         """
     )
-
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.metric("Glucose", glucose)
-
-with col2:
-    st.metric("BMI", bmi)
-
-with col3:
-    st.metric("Age", age)
-
-st.subheader("Prediction Result")
-
-
-
-if prediction == 1:
-        st.error(
-            f"⚠ High Diabetes Risk ({probability:.2%})"
-        )
-else:
-        st.success(
-            f"✅ Low Diabetes Risk ({probability:.2%})"
-        )
-st.subheader("Prediction History")
-
-history_df = pd.DataFrame(st.session_state.history)
-
-st.dataframe(history_df)
+       
