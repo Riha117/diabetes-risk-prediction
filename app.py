@@ -16,7 +16,7 @@ st.markdown(
         #1e293b,
         #0f766e
         );
-        color: white;
+        color: black;
     }
 
     .main-title {
