@@ -5,7 +5,57 @@ import pandas as pd
 import joblib
 import sqlite3
 
+st.markdown(
+    """
+    <style>
 
+    .stApp {
+        background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #0f766e
+        );
+        color: white;
+    }
+
+    .main-title {
+        text-align:center;
+        font-size:48px;
+        font-weight:bold;
+        color:white;
+    }
+
+    .sub-title {
+        text-align:center;
+        font-size:20px;
+        color:#cbd5e1;
+    }
+
+    div[data-testid="stMetric"] {
+        background-color: rgba(255,255,255,0.1);
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .stButton>button {
+        width:100%;
+        border-radius:15px;
+        height:3em;
+        font-size:20px;
+        background: linear-gradient(
+        90deg,
+        #06b6d4,
+        #3b82f6
+        );
+        color:white;
+        border:none;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown(
     """
     <style>
