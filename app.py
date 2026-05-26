@@ -212,6 +212,16 @@ if st.button("Predict Diabetes Risk"):
     }
 ))
 
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("Glucose", glucose)
+
+with col2:
+    st.metric("BMI", bmi)
+
+with col3:
+    st.metric("Age", age)
 st.plotly_chart(fig)
 
     st.subheader("Prediction Result")
