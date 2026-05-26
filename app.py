@@ -81,6 +81,19 @@ st.markdown(
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    st.markdown(
+    """
+    <style>
+    .glass {
+        background: rgba(255,255,255,0.1);
+        padding:20px;
+        border-radius:20px;
+        backdrop-filter: blur(10px);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     </style>
     """,
     unsafe_allow_html=True
@@ -211,6 +224,55 @@ if st.button("Predict Diabetes Risk"):
         ]
     }
 ))
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("Glucose", glucose)
+
+with col2:
+    st.metric("BMI", bmi)
+
+with col3:
+    st.metric("Age", age)
+
+chart_data = pd.DataFrame({
+    "Health Metrics": [
+        "Glucose",
+        "BMI",
+        "Blood Pressure"
+    ],
+    "Values": [
+        glucose,
+        bmi,
+        blood_pressure
+    ]
+})
+
+st.bar_chart(
+    chart_data.set_index("Health Metrics")
+)
+
+tab1, tab2 = st.tabs([
+    "Prediction",
+    "Health Tips"
+])
+
+with tab1:
+    st.write("Prediction dashboard")
+
+with tab2:
+    st.info(
+        """
+        ✔ Exercise regularly
+        
+        ✔ Maintain healthy BMI
+        
+        ✔ Reduce sugar intake
+        
+        ✔ Monitor glucose levels
+        """
+    )
 
 col1, col2, col3 = st.columns(3)
 
