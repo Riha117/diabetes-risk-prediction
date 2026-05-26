@@ -113,6 +113,12 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+selected = option_menu(
+    menu_title=None,
+    options=["Prediction", "Analytics", "About"],
+    icons=["activity", "bar-chart", "info-circle"],
+    orientation="horizontal"
+)
 st.write("Enter health details below:")
 
 # User Inputs
