@@ -98,33 +98,21 @@ model = joblib.load("diabetes_model.pkl")
 # Title
 st.markdown(
     """
-    <h1 style='text-align:center;'>
-    🩺 AI Diabetes Risk Predictor
-    </h1>
+    <div class="main-title">
+    🩺 AI Diabetes Prediction System
+    </div>
     """,
     unsafe_allow_html=True
 )
 
 st.markdown(
     """
-    <p style='text-align:center; font-size:18px;'>
-    Predict diabetes risk using Machine Learning
-    </p>
+    <div class="sub-title">
+    Advanced Healthcare Analytics Dashboard
+    </div>
     """,
     unsafe_allow_html=True
 )
-st.sidebar.image(
-    "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
-    width=120
-)
-
-st.sidebar.title("Navigation")
-
-page = st.sidebar.radio(
-    "Go To",
-    ["Prediction", "About Project"]
-)
-
 st.write("Enter health details below:")
 
 # User Inputs
