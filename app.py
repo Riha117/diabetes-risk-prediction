@@ -267,7 +267,6 @@ with col2:
 
 with col3:
     st.metric("Age", age)
-st.plotly_chart(fig)
 
 st.subheader("Prediction Result")
 
