@@ -173,6 +173,7 @@ if st.button("Predict Diabetes Risk"):
 
     probability = model.predict_proba(input_data)[0][1]
 
+    # Circular Gauge
     fig = go.Figure(go.Indicator(
         mode="gauge+number",
 
@@ -195,7 +196,18 @@ if st.button("Predict Diabetes Risk"):
 
     st.plotly_chart(fig)
 
-    st.plotly_chart(fig)
+    st.subheader("Prediction Result")
+
+    st.progress(float(probability))
+
+    if prediction == 1:
+        st.error(
+            f"⚠ High Diabetes Risk ({probability:.2%})"
+        )
+    else:
+        st.success(
+            f"✅ Low Diabetes Risk ({probability:.2%})"
+        )
 col1, col2, col3 = st.columns(3)
 
 with col1:
