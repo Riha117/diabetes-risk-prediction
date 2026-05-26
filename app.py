@@ -260,7 +260,7 @@ st.subheader("Prediction Result")
 
 st.progress(float(probability))
 
-    if prediction == 1:
+if prediction == 1:
         st.error(
             f"⚠ High Diabetes Risk ({probability:.2%})"
         )
