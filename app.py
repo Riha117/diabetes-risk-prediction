@@ -158,9 +158,16 @@ with col2:
 # Predict Button
 if st.button("Predict Diabetes Risk"):
 
-if st.button("Predict"):
-
-input_data = pd.DataFrame([...])
+    input_data = pd.DataFrame([{
+        "Pregnancies": pregnancies,
+        "Glucose": glucose,
+        "BloodPressure": blood_pressure,
+        "SkinThickness": skin_thickness,
+        "Insulin": insulin,
+        "BMI": bmi,
+        "DiabetesPedigreeFunction": dpf,
+        "Age": age
+    }])
 
     prediction = model.predict(input_data)[0]
 
@@ -185,6 +192,8 @@ input_data = pd.DataFrame([...])
             ]
         }
     ))
+
+    st.plotly_chart(fig)
 
     st.plotly_chart(fig)
 col1, col2, col3 = st.columns(3)
