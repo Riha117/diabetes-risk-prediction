@@ -258,7 +258,7 @@ st.plotly_chart(fig)
 
 st.subheader("Prediction Result")
 
-    st.progress(float(probability))
+st.progress(float(probability))
 
     if prediction == 1:
         st.error(
