@@ -224,7 +224,7 @@ with col3:
     st.metric("Age", age)
 st.plotly_chart(fig)
 
-    st.subheader("Prediction Result")
+st.subheader("Prediction Result")
 
     st.progress(float(probability))
 
