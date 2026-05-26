@@ -264,7 +264,7 @@ if prediction == 1:
         st.error(
             f"⚠ High Diabetes Risk ({probability:.2%})"
         )
-    else:
+else:
         st.success(
             f"✅ Low Diabetes Risk ({probability:.2%})"
         )
