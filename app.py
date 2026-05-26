@@ -160,7 +160,7 @@ if st.button("Predict Diabetes Risk"):
 
     if st.button("Predict"):
 
-    input_data = pd.DataFrame([...])
+input_data = pd.DataFrame([...])
 
     prediction = model.predict(input_data)[0]
 
