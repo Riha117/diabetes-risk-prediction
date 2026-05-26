@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 import sqlite3
+import plotly.graph_objects as go
 
 st.markdown(
     """
@@ -190,6 +191,28 @@ if st.button("Predict Diabetes Risk"):
     prediction = model.predict(input_data)[0]
 
     probability = model.predict_proba(input_data)[0][1]
+
+    fig = go.Figure(go.Indicator(
+    mode = "gauge+number",
+
+    value = probability * 100,
+
+    title = {'text': "Diabetes Risk"},
+
+    gauge = {
+        'axis': {'range': [0, 100]},
+
+        'bar': {'color': "red"},
+
+        'steps': [
+            {'range': [0, 50], 'color': "lightgreen"},
+            {'range': [50, 80], 'color': "orange"},
+            {'range': [80, 100], 'color': "red"}
+        ]
+    }
+))
+
+st.plotly_chart(fig)
 
     st.subheader("Prediction Result")
 
