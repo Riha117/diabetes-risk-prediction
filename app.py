@@ -158,43 +158,35 @@ with col2:
 # Predict Button
 if st.button("Predict Diabetes Risk"):
 
-    if st.button("Predict Diabetes Risk"):
+    if st.button("Predict"):
 
-        input_data = [[
-        pregnancies,
-        glucose,
-        blood_pressure,
-        skin_thickness,
-        insulin,
-        bmi,
-        diabetes_pedigree,
-        age
-    ]]
+    input_data = pd.DataFrame([...])
 
     prediction = model.predict(input_data)[0]
 
     probability = model.predict_proba(input_data)[0][1]
 
     fig = go.Figure(go.Indicator(
-    mode = "gauge+number",
+        mode="gauge+number",
 
-    value = probability * 100,
+        value=probability * 100,
 
-    title = {'text': "Diabetes Risk"},
+        title={'text': "Diabetes Risk"},
 
-    gauge = {
-        'axis': {'range': [0, 100]},
+        gauge={
+            'axis': {'range': [0, 100]},
 
-        'bar': {'color': "red"},
+            'bar': {'color': "red"},
 
-        'steps': [
-            {'range': [0, 50], 'color': "lightgreen"},
-            {'range': [50, 80], 'color': "orange"},
-            {'range': [80, 100], 'color': "red"}
-        ]
-    }
-))
+            'steps': [
+                {'range': [0, 50], 'color': "lightgreen"},
+                {'range': [50, 80], 'color': "orange"},
+                {'range': [80, 100], 'color': "red"}
+            ]
+        }
+    ))
 
+    st.plotly_chart(fig)
 col1, col2, col3 = st.columns(3)
 
 with col1:
